@@ -1,0 +1,32 @@
+---
+title: "Actividad 5, Rmarkdawn en grupo"
+author: "Victoria Silveira"
+date: "4 de abril de 2018"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# Incluir imagen 
+![](tortuga.jpg)
+
+La elegi porque tiene lindos colores y me gustan las tortuguitas
+
+# Chunck con código de R
+
+```{r echo = TRUE, fig.width = 5, fig.height = 5} 
+library(ggplot2)
+ggplot(data=mpg,aes(x=hwy, y=cty))+ geom_point()+theme(aspect.ratio=1)+ labs(x="millas por galon en carretera", y="millas por galon en la ciudad", title="grafico de millas por galon")
+```
+
+# Incluir tabla
+
+```{r,results='asis'}
+library(xtable)
+xtable(mtcars[1:5,1:5])
+```
